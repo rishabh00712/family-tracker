@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New User</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/new.css">
+</head>
+
+<body>
+    <style>
+        button{
+            background-color: red;
+        }
+    </style>
+  <h1>Remove country from <%= name %></h1>
+  <form action="/delete" method="post">
+    
+    <p>Which country you want to remove?</p>
+    <input type="text" name="country" autofocus placeholder="<%= locals.error?error :'Country Name' %>" required>
+
+    <button type="submit">Remove</button>
+  </form>
+  <form action="/deleteall" method="post">
+    
+    <p>⚠️It Will Erase all of Your Previos Data⚠️</p>
+    <input type="text" name="key"  placeholder="<%= locals.error?error :'Need a Security Key' %>" required>
+
+    <button type="submit">Remove</button>
+  </form>
+</body>
+
+</html>
